@@ -1,0 +1,9 @@
+<h1> Gallery </h1>
+
+  <% if @images.any? %>
+    <% @images.each do |image| %>
+      <%= image_tag image.image.url(:medium) %>
+    <% end %>
+  <% else %>
+    <h1> No images </h1>
+  <% end %>
