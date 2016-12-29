@@ -1,9 +1,14 @@
-<h1> Gallery </h1>
+<h1 align="center"> Gallery </h1>
 
+<div class="gallery">
   <% if @images.any? %>
     <% @images.each do |image| %>
-      <%= image_tag image.image.url(:medium) %>
+      <div class = "image">
+        <%= image_tag image.image.url(:medium) %>
+        <%= button_to 'Delete', delete_image_path(:image => image),method: :delete, class: "btn btn-danger" %>
+      </div>
     <% end %>
   <% else %>
-    <h1> No images </h1>
+    <h1 align="center"> No images </h1>
   <% end %>
+</div>
